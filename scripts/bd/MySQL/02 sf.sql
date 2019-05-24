@@ -5,9 +5,19 @@ create function entradasVendidasEntre (unidPelicula smallint,
                                        returns int
  begin
  declare EntradaVendidas int;
- select sum (idEntrada) into EntradaVendidas
+ select COUNT(idEntrada) into EntradaVendidas
  from Entrada
  where fecha_y_hora between cotaInferior and cotaSuperior;
  return EntradaVendidas;
  end$$
-                                        
+ 
+ create function  EntradasDisponibles (unidProyeccion smallint)
+                                       returns int
+begin
+ declare entradasDisp int;
+ select  capacidad - EntradasVenididas  into  entradasDisp   
+ from Proyeccion
+ where idProyeccion = unidProyeccion;
+ return entradasDisp;
+ 
+end$$
