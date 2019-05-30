@@ -15,7 +15,7 @@ create function entradasVendidasEntre (unidPelicula smallint,
                                        returns int
 begin
  declare entradasDisp int;
- select  capacidad - EntradasVenididas  into  entradasDisp   
+ select  capacidad - idEntradas into  entradasDisp   
  from Proyeccion
  where idProyeccion = unidProyeccion;
  return entradasDisp;
