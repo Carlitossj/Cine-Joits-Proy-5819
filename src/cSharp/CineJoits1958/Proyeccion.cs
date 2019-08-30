@@ -27,7 +27,7 @@ namespace CineJoits1958
         public List<Entrada>EntradasVendidas { get; set; }
         public void VenderEntrada()
         {
-            Entrada vendida = new Entrada(this);
+            Entrada vendida = new Entrada();
            EntradasVendidas.Add(vendida);
         }
 
