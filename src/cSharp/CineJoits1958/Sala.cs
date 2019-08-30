@@ -7,7 +7,7 @@ using System.Text;
 namespace CineJoits1958
 {
     [Table("Sala")]
-    class Sala
+    public class Sala
     {
         [Key]
         [Column("idSala")]

@@ -7,7 +7,7 @@ using System.Text;
 namespace CineJoits1958
 {
     [Table("Entrada")]
-    class Entrada
+    public class Entrada
     {
         [Key]
         [Column("idEntrada")]
@@ -19,6 +19,12 @@ namespace CineJoits1958
         [Required]
         public float Valor { get; set; }
 
+        public Entrada() { }
+        public Entrada(Proyeccion proyeccion,float valor)
+        {
+            Proyeccion = proyeccion;
+            Valor = valor;
+        }
 
     }
 }
