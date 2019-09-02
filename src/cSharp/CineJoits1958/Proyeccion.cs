@@ -24,13 +24,15 @@ namespace CineJoits1958
         [Column("Precio")]
         [Required]
         public float Precio { get; set; }
+
         public List<Entrada>EntradasVendidas { get; set; }
         public void VenderEntrada()
         {
-            Entrada vendida = new Entrada();
-           EntradasVendidas.Add(vendida);
+            EntradasVendidas.Add(new Entrada(this));
         }
-
+       [NotMapped]
+        public int EntradasDisponibles =>Sala.Capacidad - EntradasVendidas.Count ;
+        Count 
     }
 
 }

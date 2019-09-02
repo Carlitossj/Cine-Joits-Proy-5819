@@ -20,11 +20,15 @@ namespace CineJoits1958
         public float Valor { get; set; }
 
         public Entrada() { }
-        public Entrada(Proyeccion proyeccion,float valor)
+
+        public Entrada(Proyeccion proyeccion)
         {
             Proyeccion = proyeccion;
-            Valor = valor;
+            Valor = proyeccion.Precio;
         }
-
+         public bool Entre (DateTime Inicio,DateTime fin)
+        {
+            return Inicio <= FechaHora && FechaHora <= fin;
+        }
     }
 }
