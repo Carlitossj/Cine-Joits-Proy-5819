@@ -22,6 +22,11 @@ namespace CineJoits1958
         [Column("Genero")]
         [Required]
         public Genero Genero { get; set; }
-
+        public List<Proyeccion> Proyecciones { get; set; }
+       
+        public void AgregarProyeccion (Proyeccion proyeccion)
+        {
+            Proyecciones.Add(proyeccion);
+        }
     }
 }
