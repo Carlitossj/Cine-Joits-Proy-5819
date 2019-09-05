@@ -9,16 +9,18 @@ namespace CineJoits1958
     [Table("Entrada")]
     public class Entrada
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("idEntrada")]
         public int Id { get; set; }
-        [Column("Proyeccion")]
-        [Required]
+        [ForeignKey("idProyección"), Required]  
         public Proyeccion Proyeccion { get; set; }
         [Column("Valor")]
         [Required]
         public float Valor { get; set; }
-
+        [Column("FechaHora")]
+        [Required]
+        public DateTime FechaHora { get; set; }
         public Entrada() { }
 
         public Entrada(Proyeccion proyeccion)
@@ -27,8 +29,8 @@ namespace CineJoits1958
             Valor = proyeccion.Precio;
         }
          public bool Entre (DateTime Inicio,DateTime fin)
-        {
-            return Inicio <= FechaHora && FechaHora <= fin;
-        }
+         {
+            return Inicio <=FechaHora && FechaHora <= fin;
+         }
     }
 }

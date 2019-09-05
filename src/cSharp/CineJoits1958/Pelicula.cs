@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Linq;
 
 namespace CineJoits1958
 {
     [Table("Pelicula")]
     public class Pelicula
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("idPelicula")]
         public short Id{ get; set; }
@@ -19,7 +21,7 @@ namespace CineJoits1958
         [Column("Fecha de Lanzamiento")]
         [Required]
         public DateTime Lanzamiento { get; set; }
-        [Column("Genero")]
+        [ForeignKey("idGenero")]
         [Required]
         public Genero Genero { get; set; }
         public List<Proyeccion> Proyecciones { get; set; }
@@ -27,6 +29,10 @@ namespace CineJoits1958
         public void AgregarProyeccion (Proyeccion proyeccion)
         {
             Proyecciones.Add(proyeccion);
+        }
+        public int EntradasVenidasentre(DateTime inicio, DateTime fin)
+        {
+            return Proyecciones.Sum(p => p.EntradasVenidasentre(inicio,fin));
         }
     }
 }

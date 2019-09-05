@@ -7,6 +7,7 @@ namespace CineJoits1958
     [Table("Genero")]
     public class Genero
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column("idGenero")]
         public  short Id { get; set; }
