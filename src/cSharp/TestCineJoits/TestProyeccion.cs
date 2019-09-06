@@ -1,6 +1,6 @@
 using CineJoits1958;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using System;
 
 namespace TestCineJoits
 {
@@ -10,9 +10,9 @@ namespace TestCineJoits
         
         static Pelicula It { get; set; }
         static Sala tres {get;set;}
-        public void setup()
-        {
-         
-        }
+
+        Proyeccion p1 = new Proyeccion();
+        
+        
     }
 }

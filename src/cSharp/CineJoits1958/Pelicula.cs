@@ -25,7 +25,10 @@ namespace CineJoits1958
         [Required]
         public Genero Genero { get; set; }
         public List<Proyeccion> Proyecciones { get; set; }
-       
+        public Pelicula()
+        {
+            Proyecciones = new List<Proyeccion>();
+        }
         public void AgregarProyeccion (Proyeccion proyeccion)
         {
             Proyecciones.Add(proyeccion);

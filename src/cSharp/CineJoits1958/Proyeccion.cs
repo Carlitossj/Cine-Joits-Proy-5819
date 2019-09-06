@@ -26,6 +26,7 @@ namespace CineJoits1958
         [Column("Precio")]
         [Required]
         public float Precio { get; set; }
+        public Proyeccion() { }
 
         public List<Entrada>EntradasVendidas { get; set; }
         public void VenderEntrada()
@@ -33,7 +34,10 @@ namespace CineJoits1958
             EntradasVendidas.Add(new Entrada(this));
         }
         [NotMapped]
-        public int EntradasDisponibles =>Sala.Capacidad - EntradasVendidas.Count ;
+        public int EntradasDisponibles =>Sala.Capacidad - CantidadVendidas ;
+        [NotMapped]
+        public int CantidadVendidas => EntradasVendidas.Count;
+
         public int EntradasVenidasentre(DateTime inicio, DateTime fin)
         {
             return EntradasVendidas.Count(ev => ev.Entre(inicio, fin));                                      
