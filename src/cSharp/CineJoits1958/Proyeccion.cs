@@ -38,7 +38,7 @@ namespace CineJoits1958
         [NotMapped]
         public int CantidadVendidas => EntradasVendidas.Count;
 
-        public int EntradasVenidasentre(DateTime inicio, DateTime fin)
+        public int EntradasVendidasentre(DateTime inicio, DateTime fin)
         {
             return EntradasVendidas.Count(ev => ev.Entre(inicio, fin));                                      
         }

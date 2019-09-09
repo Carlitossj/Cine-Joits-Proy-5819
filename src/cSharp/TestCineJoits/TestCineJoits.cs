@@ -2,6 +2,8 @@ using CineJoits1958;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Linq;
 
 namespace TestCineJoits
 {
@@ -26,6 +28,7 @@ namespace TestCineJoits
             It.Nombre = "IT(ESO) 2";
             It.Genero = Terror;
             It.Lanzamiento = new DateTime(2019, 09, 05);
+            
             setupProyeccion();
             setupSala();
             setupEntradait();
@@ -88,8 +91,18 @@ namespace TestCineJoits
             proyeccion1.VenderEntrada();
             Assert.AreEqual(3, proyeccion1.CantidadVendidas);
         }
-        
-       
+        [TestMethod]
+        public int EntradasVenidasentre()
+        {
+           
+            return proyeccion1.EntradasVendidas.Count(ev => ev.Entre());
+           
+        }
+        [TestMethod]
+        public int EntradasVenidasEntre()
+        {
+            return It.Proyecciones.Sum(p => p.CantidadVendidas);
+        }
 
 
 

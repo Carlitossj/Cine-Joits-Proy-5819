@@ -33,9 +33,9 @@ namespace CineJoits1958
         {
             Proyecciones.Add(proyeccion);
         }
-        public int EntradasVenidasentre(DateTime inicio, DateTime fin)
+        public int EntradasVendidasEntre(DateTime inicio, DateTime fin)
         {
-            return Proyecciones.Sum(p => p.EntradasVenidasentre(inicio,fin));
+            return Proyecciones.Sum(p => p.EntradasVendidasentre(inicio,fin));
         }
     }
 }

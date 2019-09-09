@@ -32,5 +32,10 @@ namespace CineJoits1958
          {
             return Inicio <=FechaHora && FechaHora <= fin;
          }
+
+        public bool Entre()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
