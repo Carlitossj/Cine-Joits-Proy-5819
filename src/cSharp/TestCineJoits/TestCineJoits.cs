@@ -29,10 +29,11 @@ namespace TestCineJoits
             It.Genero = Terror;
             It.Lanzamiento = new DateTime(2019, 09, 05);
             
-            setupProyeccion();
             setupSala();
+            setupProyeccion();
             setupEntradait();
-            setupEntradait2();
+            setupEntradait2();            
+            proyeccion1.EntradasVendidas = new List<Entrada>() { entradaIt, entradaIt2 };
         }
         
         public void setupProyeccion()
@@ -40,7 +41,7 @@ namespace TestCineJoits
             proyeccion1 = new Proyeccion();
             proyeccion1.FechaHora = new DateTime(2019, 09, 06);
             proyeccion1.Precio = 170;
-            proyeccion1.EntradasVendidas = new List<Entrada>() { entradaIt, entradaIt2 };
+            It.AgregarProyeccion(proyeccion1);
            
         }
         
@@ -92,16 +93,20 @@ namespace TestCineJoits
             Assert.AreEqual(3, proyeccion1.CantidadVendidas);
         }
         [TestMethod]
-        public int EntradasVenidasentre()
+        public void EntradasVenidasentre()
         {
-           
-            return proyeccion1.EntradasVendidas.Count(ev => ev.Entre());
-           
+            DateTime inicio = new DateTime(2019, 09, 04);
+            DateTime fin = new DateTime(2019, 09, 08);
+            Assert.AreEqual(2, proyeccion1.CantidadVendidas);
+            Assert.AreEqual(2,proyeccion1.EntradasVendidasentre(inicio, fin));
         }
         [TestMethod]
-        public int EntradasVenidasEntre()
+        public void EntradasVendidasEntre()
         {
-            return It.Proyecciones.Sum(p => p.CantidadVendidas);
+            DateTime inicio = new DateTime(2019, 09, 04);
+            DateTime fin = new DateTime(2019, 09, 08);
+            Assert.AreEqual(2,It.EntradasVendidasEntre(inicio,fin));
+            
         }
 
 
