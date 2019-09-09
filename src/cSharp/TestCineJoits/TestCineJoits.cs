@@ -13,7 +13,7 @@ namespace TestCineJoits
     {
         Pelicula It { get; set; }
         Genero Terror { get; set; }
-        Sala tres { get; set; }
+        Sala Sala3 { get; set; }
         Proyeccion proyeccion1 { get; set; }
         Entrada entradaIt { get; set; }
         Entrada entradaIt2 { get; set; }
@@ -40,6 +40,7 @@ namespace TestCineJoits
         public void setupProyeccion()
         {
             proyeccion1 = new Proyeccion();
+            proyeccion1.Sala = Sala3;
             proyeccion1.FechaHora = new DateTime(2019, 09, 06);
             proyeccion1.Precio = 170;
             It.AgregarProyeccion(proyeccion1);
@@ -48,9 +49,9 @@ namespace TestCineJoits
         
         public void setupSala()
         {
-            tres = new Sala();
-            tres.Capacidad = 250;
-            tres.Piso = 2;
+            Sala3 = new Sala();
+            Sala3.Capacidad = 250;
+            Sala3.Piso = 2;
 
         }
        
@@ -116,6 +117,7 @@ namespace TestCineJoits
             AdoMySQLEntityCore ado = new AdoMySQLEntityCore();
             ado.Database.EnsureDeleted();
             ado.Database.EnsureCreated();
+            ado.agregarPelicula(It);
         }
 
 
