@@ -41,6 +41,11 @@ namespace CineJoits1958.ADO
           Entradas.Add(entrada);
             SaveChanges();
         }
+        public void actualizarPelicula(Pelicula pelicula)
+        {
+            this.Update<Pelicula>(pelicula);
+            SaveChanges();
+        }
         public List<Genero> obtenerGeneros() => Generos.ToList();
         public List<Pelicula> obtenerPeliculas()
         {
@@ -60,6 +65,11 @@ namespace CineJoits1958.ADO
             return Entradas
                 .Where(entrada => entrada.Proyeccion == proyeccion)
                 .ToList();
+        }
+        public void actualizarEntrada(Entrada entrada)
+        {
+            this.Update<Entrada>(entrada);
+            SaveChanges();
         }
     }
         
