@@ -2,6 +2,7 @@ using CineJoits1958;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using CineJoits1958.ADO;
 using System.Text;
 using System.Linq;
 
@@ -107,6 +108,14 @@ namespace TestCineJoits
             DateTime fin = new DateTime(2019, 09, 08);
             Assert.AreEqual(2,It.EntradasVendidasEntre(inicio,fin));
             
+        }
+
+        [TestMethod]
+        public void CrearBD()
+        {
+            AdoMySQLEntityCore ado = new AdoMySQLEntityCore();
+            ado.Database.EnsureDeleted();
+            ado.Database.EnsureCreated();
         }
 
 

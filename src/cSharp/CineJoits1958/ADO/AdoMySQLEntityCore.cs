@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CineJoits1958.ADO
 {
-    class AdoMySQLEntityCore : DbContext
+    public class AdoMySQLEntityCore : DbContext
     {
         public DbSet<Pelicula> Peliculas { get; set; }
         public DbSet<Genero> Generos { get; set; }
@@ -14,7 +14,7 @@ namespace CineJoits1958.ADO
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseMySQL("server=localhost;database=supermercado;user=supermercado;password=supermercado");
+            optionsBuilder.UseMySQL("server=localhost;database=cinejoits58;user=root;password=root");
         }
         public void agregarPelicula(Pelicula pelicula)
         {
@@ -70,7 +70,10 @@ namespace CineJoits1958.ADO
         {
             this.Update<Entrada>(entrada);
             SaveChanges();
+
         }
+
+
     }
         
 
