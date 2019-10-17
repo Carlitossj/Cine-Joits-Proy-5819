@@ -9,6 +9,11 @@ namespace TestCineJoits
     [TestClass]
     public class TestPersistencia
     {
-
+        public static void CrearBD(TestContext context)
+        {
+            var ado = new AdoMySQLEntityCore();
+            ado.Database.EnsureDeleted();
+            ado.Database.EnsureCreated();
+        }
     }
 }
