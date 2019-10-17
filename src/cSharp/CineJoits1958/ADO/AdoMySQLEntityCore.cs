@@ -11,6 +11,7 @@ namespace CineJoits1958.ADO
         public DbSet<Proyeccion> Proyecciones { get; set; }
         public DbSet<Sala> Salas { get; set; }
         public DbSet<Entrada> Entradas { get; set; }
+        public DbSet<Cajero> Cajeros { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
@@ -41,6 +42,11 @@ namespace CineJoits1958.ADO
           Entradas.Add(entrada);
             SaveChanges();
         }
+        public void agregarCajero(Cajero cajero)
+        {
+            Cajeros.Add(cajero);
+            SaveChanges();
+        }
         public void actualizarPelicula(Pelicula pelicula)
         {
             this.Update<Pelicula>(pelicula);
@@ -64,6 +70,7 @@ namespace CineJoits1958.ADO
         {
             return Entradas
                 .Where(entrada => entrada.Proyeccion == proyeccion)
+                .Include(entrada => entrada.Cajero)
                 .ToList();
         }
         public void actualizarEntrada(Entrada entrada)
@@ -72,6 +79,7 @@ namespace CineJoits1958.ADO
             SaveChanges();
 
         }
+        public List<Cajero> obtenerCajeros() =>Cajeros.ToList();
 
 
     }

@@ -18,6 +18,7 @@ namespace TestCineJoits
         Entrada entradaIt { get; set; }
         Entrada entradaIt2 { get; set; }
         
+        
         List<Entrada> EntradasVendidas =new List<Entrada> ();
 
         [TestInitialize]

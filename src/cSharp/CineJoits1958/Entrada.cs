@@ -21,6 +21,9 @@ namespace CineJoits1958
         [Column("FechaHora")]
         [Required]
         public DateTime FechaHora { get; set; }
+        [ForeignKey("Cajero"), Required]
+
+        public Cajero Cajero { get; set; }
         public Entrada() { }
 
         public Entrada(Proyeccion proyeccion)
