@@ -21,12 +21,12 @@ namespace CineJoits1958
         [Column("FechaHora")]
         [Required]
         public DateTime FechaHora { get; set; }
-        [ForeignKey("Cajero"), Required]
+        [ForeignKey("DniCajero"), Required]
 
         public Cajero Cajero { get; set; }
         public Entrada() { }
 
-        public Entrada(Proyeccion proyeccion)
+        public Entrada(Proyeccion proyeccion, Cajero cajero)
         {
             Proyeccion = proyeccion;
             Valor = proyeccion.Precio;

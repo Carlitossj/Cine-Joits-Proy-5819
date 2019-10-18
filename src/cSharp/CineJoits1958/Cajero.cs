@@ -18,16 +18,22 @@ namespace CineJoits1958
         public int   dni { get; set; }
         [Column("Nombre")]
         [Required]
+        [StringLength(45)]
         public string Nombre { get; set; }
         [Column("Apellido")]
         [Required]
+        [StringLength(45)]
         public string Apellido { get; set; }
         [Column("Email")]
         [Required]
+        [StringLength(45)]
         public string Email { get; set; }
         [Column("Contraseña")]
         [Required]
+        [StringLength(45)]
         public string Contraseña { get; set; }
+        [NotMapped]
+        public string NombreCompleto => $"{Apellido}, {Nombre}";
         public Cajero() { }
 
     }

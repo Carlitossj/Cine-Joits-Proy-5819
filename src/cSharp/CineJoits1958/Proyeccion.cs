@@ -29,9 +29,9 @@ namespace CineJoits1958
         public Proyeccion() { }
 
         public List<Entrada>EntradasVendidas { get; set; }
-        public void VenderEntrada()
+        public void VenderEntrada(Cajero cajero)
         {
-            EntradasVendidas.Add(new Entrada(this));
+            EntradasVendidas.Add(new Entrada(this,cajero));
         }
         [NotMapped]
         public int EntradasDisponibles =>Sala.Capacidad - CantidadVendidas ;

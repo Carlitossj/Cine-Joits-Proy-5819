@@ -80,7 +80,8 @@ namespace CineJoits1958.ADO
 
         }
         public List<Cajero> obtenerCajeros() =>Cajeros.ToList();
-
+        public Cajero cajeroPorDniPass(int dni, string passEncriptada)
+           => Cajeros.FirstOrDefault(c => c.dni == dni && c.Contraseña == passEncriptada);
 
     }
         

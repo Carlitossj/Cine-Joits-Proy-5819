@@ -17,6 +17,7 @@ namespace TestCineJoits
         Proyeccion proyeccion1 { get; set; }
         Entrada entradaIt { get; set; }
         Entrada entradaIt2 { get; set; }
+        Cajero cajero1 { get; set; }
         
         
         List<Entrada> EntradasVendidas =new List<Entrada> ();
