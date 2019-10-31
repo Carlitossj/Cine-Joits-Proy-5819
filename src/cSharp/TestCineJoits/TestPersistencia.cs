@@ -11,6 +11,8 @@ namespace TestCineJoits
     public class TestPersistencia
     {
         public static AdoMySQLEntityCore AdoMySQL { get; set; }
+
+        [ClassInitialize]
         public static void CrearBD(TestContext context)
         {
             AdoMySQL = FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "root");
