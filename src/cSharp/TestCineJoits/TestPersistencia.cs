@@ -10,12 +10,11 @@ namespace TestCineJoits
     [TestClass]
     public class TestPersistencia
     {
-        
+        public static AdoMySQLEntityCore AdoMySQL { get; set; }
         public static void CrearBD(TestContext context)
         {
-            var ado = new AdoMySQLEntityCore();
-            ado.Database.EnsureDeleted();
-            ado.Database.EnsureCreated();
+            AdoMySQL = FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "root");
+            AdoMySQL.Database.EnsureDeleted();
         }
         [TestMethod]
         public void persistenciaCajero()

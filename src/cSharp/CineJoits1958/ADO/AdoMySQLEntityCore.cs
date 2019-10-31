@@ -12,11 +12,10 @@ namespace CineJoits1958.ADO
         public DbSet<Sala> Salas { get; set; }
         public DbSet<Entrada> Entradas { get; set; }
         public DbSet<Cajero> Cajeros { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+       
+        public AdoMySQLEntityCore() : base() { }
 
-            optionsBuilder.UseMySQL("server=localhost;database=cinejoits58;user=root;password=root");
-        }
+        internal AdoMySQLEntityCore(DbContextOptions dbo) : base(dbo) { }
         public void agregarPelicula(Pelicula pelicula)
         {
             Peliculas.Add(pelicula);

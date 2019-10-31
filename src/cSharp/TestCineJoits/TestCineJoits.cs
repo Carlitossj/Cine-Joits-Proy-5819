@@ -38,7 +38,14 @@ namespace TestCineJoits
             setupEntradait2();            
             proyeccion1.EntradasVendidas = new List<Entrada>() { entradaIt, entradaIt2 };
         }
-        
+        public void setupCajero()
+        {
+           cajero1 = new Cajero();
+            cajero1.dni = 43568787;
+            cajero1.Nombre = "Alvaro ";
+            cajero1.Apellido = "Diaz";
+            cajero1.Email = "alvaro.diazet12@gmail.com";
+        }
         public void setupProyeccion()
         {
             proyeccion1 = new Proyeccion();
@@ -93,7 +100,7 @@ namespace TestCineJoits
         public  void VenderEntrada()
         {
             Assert.AreEqual(2, proyeccion1.CantidadVendidas);
-            proyeccion1.VenderEntrada();
+            proyeccion1.VenderEntrada(cajero1);
             Assert.AreEqual(3, proyeccion1.CantidadVendidas);
         }
         [TestMethod]
