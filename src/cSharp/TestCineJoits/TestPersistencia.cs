@@ -19,6 +19,11 @@ namespace TestCineJoits
             AdoMySQL.Database.EnsureDeleted();
         }
         [TestMethod]
+        public void SeCreaDB()
+        {
+            AdoMySQL.Database.EnsureCreated();
+        }
+        [TestMethod]
         public void persistenciaCajero()
         {
             string passEncriptada = EncryptProvider.Sha256("buenardo");

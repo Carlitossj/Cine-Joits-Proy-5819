@@ -33,6 +33,7 @@ namespace TestCineJoits
             It.Lanzamiento = new DateTime(2019, 09, 05);
             
             setupSala();
+            setupCajero();
             setupProyeccion();
             setupEntradait();
             setupEntradait2();            
