@@ -16,16 +16,19 @@ namespace TestCineJoits
         public static void CrearBD(TestContext context)
         {
             AdoMySQL = FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "root");
-            AdoMySQL.Database.EnsureDeleted();
+            
         }
         [TestMethod]
         public void SeCreaDB()
         {
+            AdoMySQL.Database.EnsureDeleted();
             AdoMySQL.Database.EnsureCreated();
         }
         [TestMethod]
         public void persistenciaCajero()
         {
+            AdoMySQL.Database.EnsureDeleted();
+            AdoMySQL.Database.EnsureCreated();
             string passEncriptada = EncryptProvider.Sha256("buenardo");
             string otherpass= EncryptProvider.Sha256("faerte");
             int DNI = 43568787;
@@ -38,24 +41,16 @@ namespace TestCineJoits
                Contraseña=passEncriptada
                 
             };
-            AdoMySQLEntityCore ado = new AdoMySQLEntityCore();
-            ado.agregarCajero(cajero);
-            Cajero cajero2 = ado.cajeroPorDniPass(DNI, otherpass);
+            AdoMySQL.agregarCajero(cajero);
+            Cajero cajero2 = AdoMySQL.cajeroPorDniPass(DNI, otherpass);
             Assert.IsNull(cajero2);
-
-            Cajero cajero3 = ado.cajeroPorDniPass(otherdni, passEncriptada);
+            Cajero cajero3 = AdoMySQL.cajeroPorDniPass(otherdni,passEncriptada);
             Assert.IsNull(cajero3);
-
-            Cajero cajero4 = ado.cajeroPorDniPass(otherdni, otherpass);
-            Assert.IsNull(cajero4);
-
-            Cajero cajero5 = ado.cajeroPorDniPass(DNI, passEncriptada);
+            Cajero cajero5 = AdoMySQL.cajeroPorDniPass(DNI, passEncriptada);
             Assert.IsNotNull(cajero5);
-            Assert.AreEqual("Gomez, Juan", cajero5.NombreCompleto);
+            Assert.AreEqual("Diaz, Alvaro", cajero5.NombreCompleto);
+
         }
        
-
-
-
     }
 }

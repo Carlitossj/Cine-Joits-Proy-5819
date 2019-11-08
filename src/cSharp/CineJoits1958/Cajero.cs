@@ -1,15 +1,9 @@
-﻿using NETCore.Encrypt;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-
-
 
 namespace CineJoits1958
 {
-   [Table("Cajero")]
+    [Table("Cajero")]
     public class Cajero
     {
         [DatabaseGenerated (DatabaseGeneratedOption.None)]
@@ -25,12 +19,12 @@ namespace CineJoits1958
         [StringLength(45)]
         public string Apellido { get; set; }
         [Column("Email")]
-        [Required]
+        
         [StringLength(45)]
         public string Email { get; set; }
         [Column("Contraseña")]
         [Required]
-        [StringLength(45)]
+        [StringLength(70)]
         public string Contraseña { get; set; }
         [NotMapped]
         public string NombreCompleto => $"{Apellido}, {Nombre}";
