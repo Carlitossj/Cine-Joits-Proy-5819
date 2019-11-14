@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineJoits1958", "CineJoits1958\CineJoits1958.csproj", "{438D9DAA-846A-46C8-80CA-C6F11A9C9C37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCineJoits", "TestCineJoits\TestCineJoits.csproj", "{6C46398A-900E-4665-8AE1-47227220BEB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCineJoits", "TestCineJoits\TestCineJoits.csproj", "{6C46398A-900E-4665-8AE1-47227220BEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramaAdministrador", "ProgramaAdministrador\ProgramaAdministrador.csproj", "{B3D4EC97-76BA-43C0-9CE9-8001C531120D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6C46398A-900E-4665-8AE1-47227220BEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C46398A-900E-4665-8AE1-47227220BEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C46398A-900E-4665-8AE1-47227220BEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D4EC97-76BA-43C0-9CE9-8001C531120D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D4EC97-76BA-43C0-9CE9-8001C531120D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D4EC97-76BA-43C0-9CE9-8001C531120D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D4EC97-76BA-43C0-9CE9-8001C531120D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

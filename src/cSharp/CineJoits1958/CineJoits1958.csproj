@@ -8,6 +8,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.17" />
     <PackageReference Include="NETCore.Encrypt" Version="2.0.8" />
+    <PackageReference Include="ReadLine" Version="2.0.1" />
   </ItemGroup>
 
 </Project>

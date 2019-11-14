@@ -18,8 +18,8 @@ namespace CineJoits1958
         [Required]
         [StringLength(45)]
         public string Apellido { get; set; }
-        [Column("Email")]
-        
+
+        [Column("Email")]        
         [StringLength(45)]
         public string Email { get; set; }
         [Column("Contraseña")]
