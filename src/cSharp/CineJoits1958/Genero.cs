@@ -15,5 +15,10 @@ namespace CineJoits1958
         [Required]
         [StringLength(45)]
         public string Nombre { get; set; }
+        public Genero() { }
+        public Genero(string nombre)
+        {
+            Nombre = nombre;
+        }
     }
 }

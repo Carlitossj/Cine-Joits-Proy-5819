@@ -1,7 +1,7 @@
-﻿using CineJoits1958;
-using MenuesConsola;       
+﻿using MenuesConsola;
 using NETCore.Encrypt;
 using System;
+using CineJoits1958;
 using static System.ReadLine;
 
 namespace ProgramaAdministrador.Menu
