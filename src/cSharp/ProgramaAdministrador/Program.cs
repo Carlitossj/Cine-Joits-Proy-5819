@@ -9,13 +9,43 @@ namespace ProgramaAdministrador
         {
             var menuAgregarCajero = new AgregarCajero() { Nombre = "Agregar  Cajero" };
             var menuListaCajero = new ListaCajeros() { Nombre = "Listado Cajeros" };
+            var menuAgregarGenero =new AgregarGenero() { Nombre = "Agregar Genero" };
+            var menuListaGenero = new ListaGeneros() { Nombre = "Listado Generos" };
+            var menuAgregarPelicula = new AgregarPelicula() { Nombre = "Agregar Pelicula" };
+            var menuListaPeliculas = new ListaPeliculas() { Nombre = "Listado Peliculas" };
+            var menuAgregarSala = new AgregarSala() { Nombre = "Agregar Sala" };
+            var menuListaSalas = new ListaSalas() { Nombre = "Listado Salas" };
+            var menuAgregarProyeccion = new AgregarProyeccion() { Nombre = "Agregar Proyeccion" };
+            var menuListaProyecciones = new ListaProyecciones() { Nombre = "Listado Proyecciones" };
+
 
             var menuCajero = new MenuCompuesto() { Nombre = "Cajero" };
             menuCajero.agregarMenu(menuListaCajero);
             menuCajero.agregarMenu(menuAgregarCajero);
 
-            var menu = new MenuCompuesto() { Nombre = "Menu Gerente" };
+            var menuGenero = new MenuCompuesto() { Nombre = "Genero" };
+            menuGenero.agregarMenu(menuListaGenero);
+            menuGenero.agregarMenu(menuAgregarGenero);
+            
+            var menuPelicula = new MenuCompuesto() { Nombre = "Pelicula" };
+            menuPelicula.agregarMenu(menuListaPeliculas);
+            menuPelicula.agregarMenu(menuAgregarPelicula);
+
+            var menuSala = new MenuCompuesto() { Nombre = "Sala" };
+            menuSala.agregarMenu(menuListaSalas);
+            menuSala.agregarMenu(menuAgregarSala);
+
+            var menuProyeccion = new MenuCompuesto() { Nombre = "Proyeccion" };
+            menuProyeccion.agregarMenu(menuListaProyecciones);
+            menuProyeccion.agregarMenu(menuAgregarProyeccion);
+
+
+            var menu = new MenuCompuesto() { Nombre = "Menu Administrador" };
             menu.agregarMenu(menuCajero);
+            menu.agregarMenu(menuGenero);
+            menu.agregarMenu(menuPelicula);
+            menu.agregarMenu(menuSala);
+            menu.agregarMenu(menuProyeccion);
 
             menu.mostrar();
         }
