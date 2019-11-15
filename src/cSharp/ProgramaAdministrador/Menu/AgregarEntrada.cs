@@ -17,7 +17,7 @@ namespace ProgramaAdministrador.Menu
             var proyeccion = listaProyecciones.seleccionarElemento();
             var fecha = Convert.ToDateTime(prompt("Ingrese fecha y hora DD / MM / AAAA HH: MMA"));
             var cajero = listaCajeros.seleccionarElemento();
-            entrada = new Entrada()
+            entrada = new Entrada(proyeccion,cajero)
             {
                 Proyeccion = proyeccion,
                 FechaHora = fecha,
