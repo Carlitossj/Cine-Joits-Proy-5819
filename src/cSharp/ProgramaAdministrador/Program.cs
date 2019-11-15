@@ -40,14 +40,27 @@ namespace ProgramaAdministrador
             menuProyeccion.agregarMenu(menuAgregarProyeccion);
 
 
-            var menu = new MenuCompuesto() { Nombre = "Menu Administrador" };
-            menu.agregarMenu(menuCajero);
-            menu.agregarMenu(menuGenero);
-            menu.agregarMenu(menuPelicula);
-            menu.agregarMenu(menuSala);
-            menu.agregarMenu(menuProyeccion);
+            var menuAdministrador = new MenuCompuesto() { Nombre = "Menu Administrador" };
+            menuAdministrador.agregarMenu(menuCajero);
+            menuAdministrador.agregarMenu(menuGenero);
+            menuAdministrador.agregarMenu(menuPelicula);
+            menuAdministrador.agregarMenu(menuSala);
+            menuAdministrador.agregarMenu(menuProyeccion);
 
-            menu.mostrar();
+            menuAdministrador.mostrar();
+            var menuAgregarEntrada= new AgregarEntrada{ Nombre = "Agregar Entrada" };
+            var menuListaEntradas = new ListaEntradas () { Nombre = "Listado Entradas" };
+
+            var menuEntrada = new MenuCompuesto() { Nombre = "Entrada" };
+            menuEntrada.agregarMenu(menuListaEntradas);
+            menuEntrada.agregarMenu(menuAgregarEntrada);
+
+
+            var MenuCajero = new MenuCompuesto() { Nombre = "Menu Cajero" };
+            MenuCajero.agregarMenu(menuEntrada);
+
+            menuCajero.mostrar();
+
         }
     }
 }

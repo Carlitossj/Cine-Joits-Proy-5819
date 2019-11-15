@@ -65,7 +65,7 @@ namespace CineJoits1958.ADO
                   .Include(proyecciones => proyecciones.Sala)
                   .ToList();
         }
-        public List<Entrada>entradasde(Proyeccion proyeccion)
+        public List<Entrada>obtenerEntradas(Proyeccion proyeccion)
         {
             return Entradas
                 .Where(entrada => entrada.Proyeccion == proyeccion)
