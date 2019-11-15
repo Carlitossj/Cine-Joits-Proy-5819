@@ -23,6 +23,16 @@ namespace ProgramaAdministrador.Menu
                 FechaHora = fecha,
                 Cajero = cajero
             };
+            try
+            {
+                AdoAdministrador.ADO.agregarEntrada(entrada);
+                Console.WriteLine("Entrada agregada con exito");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"No pudo ser agregada por : {e.Message} - {e.InnerException.Message}");
+            }
+            Console.ReadKey();
 
 
         }
