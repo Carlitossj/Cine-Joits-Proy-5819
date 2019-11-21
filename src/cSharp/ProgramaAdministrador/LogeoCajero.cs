@@ -25,6 +25,7 @@ namespace ProgramaAdministrador
 
             try
             {
+                Console.WriteLine("entre al try");
                 cajero = AdoCajero.ADO.cajeroPorDniPass(dni, pass);
                 if (cajero is null)
                 {
