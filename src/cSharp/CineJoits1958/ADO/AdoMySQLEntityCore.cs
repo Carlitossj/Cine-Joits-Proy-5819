@@ -62,7 +62,8 @@ namespace CineJoits1958.ADO
         public List<Proyeccion>obtenerProyecciones()
         {
             return Proyecciones
-                  .Include(proyecciones => proyecciones.Sala)
+                  .Include(p => p.Sala)
+                  .Include(p=>p.Pelicula)
                   .ToList();
         }
         public List<Entrada>obtenerEntradas(Proyeccion proyeccion)

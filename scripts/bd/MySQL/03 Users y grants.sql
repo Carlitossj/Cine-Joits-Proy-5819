@@ -23,7 +23,7 @@ grant select on Proyeccion to 'cajeros'@'localhost';
 grant select on Genero to 'cajeros'@'localhost';
 grant select on Sala to 'cajeros'@'localhost';
 grant select on Entrada to 'cajeros'@'localhost';
-grant insert on Entrada to 'cajeros'@'10.120.0.%';
+grant insert on Entrada to 'cajeros'@'localhost';
 
 
 

@@ -8,7 +8,7 @@ namespace ProgramaAdministrador.Menu
     class ListaProyecciones:MenuListador<Proyeccion>
     {
         public override void imprimirElemento(Proyeccion elemento)
-       => Console.WriteLine($"{elemento.id} - {elemento.FechaHora} - {elemento.Pelicula}");
+       => Console.WriteLine($"{elemento.id} - {elemento.FechaHora} - {elemento.Pelicula.Nombre}");
         public override List<Proyeccion> obtenerLista()
             => AdoAdministrador.ADO.obtenerProyecciones();
     

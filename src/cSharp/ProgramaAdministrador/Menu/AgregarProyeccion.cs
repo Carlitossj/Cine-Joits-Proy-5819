@@ -14,7 +14,9 @@ namespace ProgramaAdministrador.Menu
             base.mostrar();
             Console.WriteLine();
             var fecha = Convert.ToDateTime(prompt("Ingrese fecha y hora DD/MM/AAAA HH:MM"));
+            Console.WriteLine("Seleccione Sala");
             var sala = listaSalas.seleccionarElemento();
+            Console.WriteLine("Seleccione Pelicula");
             var pelicula = listaPeliculas.seleccionarElemento();
             var precio = float.Parse(prompt("Ingrese precio"));
             proyeccion=new Proyeccion()

@@ -9,20 +9,16 @@ namespace ProgramaAdministrador.Menu
     {
         public Entrada entrada{ get; set; }
         public ListaProyecciones listaProyecciones { get; set; }
-        public ListaCajeros  listaCajeros { get; set; }
+        public Cajero Cajero { get; set; }
         public override void mostrar()
         {
             base.mostrar();
             Console.WriteLine();
+            Console.WriteLine("Seleccione Proyeccion");
             var proyeccion = listaProyecciones.seleccionarElemento();
-            var fecha = Convert.ToDateTime(prompt("Ingrese fecha y hora DD / MM / AAAA HH: MMA"));
-            var cajero = listaCajeros.seleccionarElemento();
-            entrada = new Entrada(proyeccion,cajero)
-            {
-                Proyeccion = proyeccion,
-                FechaHora = fecha,
-                Cajero = cajero
-            };
+
+            entrada = new Entrada(proyeccion, Cajero);
+
             try
             {
                 AdoAdministrador.ADO.agregarEntrada(entrada);
@@ -33,8 +29,6 @@ namespace ProgramaAdministrador.Menu
                 Console.WriteLine($"No pudo ser agregada por : {e.Message} - {e.InnerException.Message}");
             }
             Console.ReadKey();
-
-
         }
     }
 }
