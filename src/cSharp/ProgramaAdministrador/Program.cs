@@ -47,20 +47,11 @@ namespace ProgramaAdministrador
             menuAdministrador.agregarMenu(menuSala);
             menuAdministrador.agregarMenu(menuProyeccion);
 
+            var login = new LogeoCajero() { Nombre = "Inicio Usuario" };
             
-            var menuAgregarEntrada= new AgregarEntrada{ Nombre = "Agregar Entrada" };
-            var menuListaEntradas = new ListaEntradas () { Nombre = "Listado Entradas" };
-
-           
-            
-
-
-
-            
-
             var MenuPrincipal = new MenuCompuesto() { Nombre = "Menu Principal" };
             MenuPrincipal.agregarMenu(menuAdministrador);
-            MenuPrincipal.agregarMenu(MenuCajero);
+            MenuPrincipal.agregarMenu(login);
             MenuPrincipal.mostrar();
         }
     }
