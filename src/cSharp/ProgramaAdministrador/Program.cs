@@ -51,17 +51,10 @@ namespace ProgramaAdministrador
             var menuAgregarEntrada= new AgregarEntrada{ Nombre = "Agregar Entrada" };
             var menuListaEntradas = new ListaEntradas () { Nombre = "Listado Entradas" };
 
-            var menuEntrada = new MenuCompuesto() { Nombre = "Entrada" };
-            menuEntrada.agregarMenu(menuListaEntradas);
-            menuEntrada.agregarMenu(menuAgregarEntrada);
+           
             
 
-            var MenuCajero = new MenuCompuesto() { Nombre = "Menu Cajero" };
-            MenuCajero.agregarMenu(menuEntrada);
-            MenuCajero.agregarMenu(menuListaPeliculas);
-            MenuCajero.agregarMenu(menuListaProyecciones);
-            MenuCajero.agregarMenu(menuListaGeneros);
-            MenuCajero.agregarMenu(menuListaPeliculas);
+
 
             
 
