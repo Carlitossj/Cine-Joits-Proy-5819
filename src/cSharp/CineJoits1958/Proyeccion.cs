@@ -26,7 +26,10 @@ namespace CineJoits1958
         [Column("Precio")]
         [Required]
         public float Precio { get; set; }
-        public Proyeccion() { }
+        public Proyeccion()
+        {
+            EntradasVendidas = new List<Entrada>();
+        }
 
         public List<Entrada>EntradasVendidas { get; set; }
         public void VenderEntrada(Cajero cajero)

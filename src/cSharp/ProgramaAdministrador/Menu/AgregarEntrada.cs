@@ -7,7 +7,6 @@ namespace ProgramaAdministrador.Menu
 {
     class AgregarEntrada:MenuComponente
     {
-        public Entrada entrada{ get; set; }
         public ListaProyecciones listaProyecciones { get; set; }
         public Cajero Cajero { get; set; }
         public override void mostrar()
@@ -21,7 +20,7 @@ namespace ProgramaAdministrador.Menu
 
             try
             {
-                AdoCajero.ADO.agregarEntrada(entrada);
+                AdoCajero.ADO.actualizarProyeccion(proyeccion);
                 Console.WriteLine("Entrada agregada con exito");
             }
             catch (Exception e)

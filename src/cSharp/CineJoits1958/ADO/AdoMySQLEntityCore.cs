@@ -82,7 +82,7 @@ namespace CineJoits1958.ADO
         }
         public void actualizarProyeccion(Proyeccion proyeccion)
         {
-            this.Update<Proyeccion>(proyeccion);
+            this.Attach<Proyeccion>(proyeccion);
             SaveChanges();
         }
         public List<Cajero> obtenerCajeros() =>Cajeros.ToList();

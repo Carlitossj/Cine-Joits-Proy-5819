@@ -30,6 +30,7 @@ namespace CineJoits1958
         {
             Proyeccion = proyeccion;
             Valor = proyeccion.Precio;
+            Cajero = cajero;
         }
          public bool Entre (DateTime Inicio,DateTime fin)
          {
