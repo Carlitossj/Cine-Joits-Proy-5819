@@ -47,12 +47,13 @@ namespace ProgramaAdministrador
         }
         private void instanciarMenuesPara(Cajero cajero)
         {
+            var menuListaCajeros = new ListaCajeros() { Nombre = "Listado Cajeros" };
             var menuListaGeneros = new ListaGeneros() { Nombre = "Listado Generos" };
             var menuListaPeliculas = new ListaPeliculas() { Nombre = "Listado Peliculas" };
             var menuListaSalas = new ListaSalas() { Nombre = "Listado Salas" };
             var menuListaProyecciones = new ListaProyecciones() { Nombre = "Listado Proyecciones" };
             var menuEntrada = new MenuCompuesto() { Nombre = "Entrada" };
-            var menuAgregarEntrada = new AgregarEntrada { Nombre = "Agregar Entrada" };
+            var menuAgregarEntrada = new AgregarEntrada { Nombre = "Agregar Entrada",listaCajeros = menuListaCajeros,listaProyecciones = menuListaProyecciones };
             var menuListaEntradas = new ListaEntradas() { Nombre = "Listado Entradas" };
             menuEntrada.agregarMenu(menuListaEntradas);
             menuEntrada.agregarMenu(menuAgregarEntrada);

@@ -11,11 +11,11 @@ namespace ProgramaAdministrador
             var menuListaCajero = new ListaCajeros() { Nombre = "Listado Cajeros" };
             var menuAgregarGenero =new AgregarGenero() { Nombre = "Agregar Genero" };
             var menuListaGeneros = new ListaGeneros() { Nombre = "Listado Generos" };
-            var menuAgregarPelicula = new AgregarPelicula() { Nombre = "Agregar Pelicula" };
+            var menuAgregarPelicula = new AgregarPelicula() { Nombre = "Agregar Pelicula", listaGeneros=menuListaGeneros };
             var menuListaPeliculas = new ListaPeliculas() { Nombre = "Listado Peliculas" };
             var menuAgregarSala = new AgregarSala() { Nombre = "Agregar Sala" };
             var menuListaSalas = new ListaSalas() { Nombre = "Listado Salas" };
-            var menuAgregarProyeccion = new AgregarProyeccion() { Nombre = "Agregar Proyeccion" };
+            var menuAgregarProyeccion = new AgregarProyeccion() { Nombre = "Agregar Proyeccion",listaSalas=menuListaSalas,listaPeliculas=menuListaPeliculas };
             var menuListaProyecciones = new ListaProyecciones() { Nombre = "Listado Proyecciones" };
 
 
