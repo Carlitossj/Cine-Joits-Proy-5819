@@ -7,10 +7,11 @@ namespace ProgramaAdministrador.Menu
 {
     class ListaEntradas : MenuListador<Entrada>
     {
+        public Proyeccion proyeccion { get; set; }
         public override void imprimirElemento(Entrada elemento)
        => Console.WriteLine($"{elemento.Id} - {elemento.FechaHora} - {elemento.Proyeccion}");
         public override List<Entrada> obtenerLista()
-            => AdoAdministrador.ADO.obtenerEntradas();
+            => AdoAdministrador.ADO.obtenerEntradas(proyeccion);
 
 
     }
