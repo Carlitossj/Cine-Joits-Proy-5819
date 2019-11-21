@@ -64,6 +64,7 @@ namespace CineJoits1958.ADO
             return Proyecciones
                   .Include(p => p.Sala)
                   .Include(p=>p.Pelicula)
+                  .Include(p=>p.EntradasVendidas)
                   .ToList();
         }
         public List<Entrada>obtenerEntradas(Proyeccion proyeccion)
@@ -78,6 +79,11 @@ namespace CineJoits1958.ADO
             this.Update<Entrada>(entrada);
             SaveChanges();
 
+        }
+        public void actualizarProyeccion(Proyeccion proyeccion)
+        {
+            this.Update<Proyeccion>(proyeccion);
+            SaveChanges();
         }
         public List<Cajero> obtenerCajeros() =>Cajeros.ToList();
         public Cajero cajeroPorDniPass(int dni, string passEncriptada)

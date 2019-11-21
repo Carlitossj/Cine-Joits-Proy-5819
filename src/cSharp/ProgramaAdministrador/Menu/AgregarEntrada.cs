@@ -17,11 +17,11 @@ namespace ProgramaAdministrador.Menu
             Console.WriteLine("Seleccione Proyeccion");
             var proyeccion = listaProyecciones.seleccionarElemento();
 
-            entrada = new Entrada(proyeccion, Cajero);
+            proyeccion.VenderEntrada(Cajero);
 
             try
             {
-                AdoAdministrador.ADO.agregarEntrada(entrada);
+                AdoCajero.ADO.agregarEntrada(entrada);
                 Console.WriteLine("Entrada agregada con exito");
             }
             catch (Exception e)
