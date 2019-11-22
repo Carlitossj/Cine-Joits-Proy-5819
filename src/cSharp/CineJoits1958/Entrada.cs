@@ -31,7 +31,7 @@ namespace CineJoits1958
             Proyeccion = proyeccion;
             Valor = proyeccion.Precio;
             Cajero = cajero;
-            echaHora = DateTime.Now;
+            FechaHora = DateTime.Now;
         }
          public bool Entre (DateTime Inicio,DateTime fin)
          {

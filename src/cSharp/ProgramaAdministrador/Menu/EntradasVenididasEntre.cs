@@ -16,7 +16,7 @@ namespace ProgramaAdministrador.Menu
             try
             {
                 Console.WriteLine("Lista de Entradas Vendidas");
-                pelicula.EntradasVendidasEntre(fecha1, fecha2);
+                //pelicula.EntradasVendidasEntre(fecha1, fecha2);
 
             }
             catch (Exception e)
