@@ -10,7 +10,7 @@ namespace ProgramaAdministrador.Menu
         public Proyeccion proyeccion { get; set; }
         public ListaProyecciones listaProyecciones { get; set; }
         public override void imprimirElemento(Entrada elemento)
-       => Console.WriteLine($"{elemento.Id} - {elemento.FechaHora} - {elemento.Proyeccion} - {elemento.Valor}");
+       => Console.WriteLine($"{elemento.Id} - {elemento.FechaHora} - ($){elemento.Valor}");
         public override List<Entrada> obtenerLista()
             => AdoCajero.ADO.obtenerEntradas(proyeccion);
         public override void mostrar()
