@@ -124,7 +124,7 @@ namespace TestCineJoits
         [TestMethod]
         public void CrearBD()
         {
-            AdoMySQLEntityCore ado = new AdoMySQLEntityCore();
+            AdoMySQLEntityCore ado = FactoryAdoMySQL.GetAdoDesdeJson("appsettings.json", "root");
             ado.Database.EnsureDeleted();
             ado.Database.EnsureCreated();
             ado.agregarPelicula(It);
